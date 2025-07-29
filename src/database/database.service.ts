@@ -3,10 +3,10 @@ import * as admin from 'firebase-admin';
 import * as path from 'path';
 
 @Injectable()
-export class DatabaseService implements OnModuleInit {
+export class DatabaseService {
   private firestore: FirebaseFirestore.Firestore;
 
-  onModuleInit() {
+  constructor() {
     const serviceAccountPath = path.resolve(
       __dirname,
       '../config/firebase-service-account.json',
